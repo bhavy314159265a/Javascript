@@ -10,7 +10,7 @@ var drawModule = (function () {
         ctx.strokeRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
   }
 
-  var pizza = function(x, y) {
+  var points = function(x, y) {
     //inner part
         ctx.fillStyle = 'yellow';
         ctx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
@@ -81,7 +81,7 @@ var drawModule = (function () {
           bodySnake(snake[i].x, snake[i].y);
         } 
         
-        pizza(food.x, food.y); 
+        points(food.x, food.y); 
         scoreText();
   }
 
@@ -111,7 +111,7 @@ var drawModule = (function () {
   }
 
   var init = function(){
-      direction = 'down';
+      direction = 'right';
       drawSnake();
       createFood();
       gameloop = setInterval(paint, 80);

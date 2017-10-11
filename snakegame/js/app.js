@@ -5,9 +5,8 @@ btn.addEventListener("click", function(){ drawModule.init();});
 
 	document.onkeydown = function(event) {
 
-        keyCode = window.event.keyCode; 
-        keyCode = event.keyCode;
-
+        keyCode = window.event.keyCode;
+        console.log("keycode of window.event.keyCode is "+keyCode);          
         switch(keyCode) {
         
         case 37: 
