@@ -2,15 +2,19 @@
 var drawModule = (function () { 
 
   var bodySnake = function(x, y) {
+        //body of the snake
         ctx.fillStyle = 'green';
         ctx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
+        //border of the body
         ctx.strokeStyle = 'darkgreen';
         ctx.strokeRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
   }
 
   var pizza = function(x, y) {
+    //inner part
         ctx.fillStyle = 'yellow';
         ctx.fillRect(x*snakeSize, y*snakeSize, snakeSize, snakeSize);
+        //outer part
         ctx.fillStyle = 'red';
         ctx.fillRect(x*snakeSize+1, y*snakeSize+1, snakeSize-2, snakeSize-2);
   }
@@ -30,11 +34,13 @@ var drawModule = (function () {
   }
     
   var paint = function(){
+    //inner color square
       ctx.fillStyle = 'black';
       ctx.fillRect(0, 0, w, h);
+      //border
       ctx.strokeStyle = 'white';
       ctx.strokeRect(0, 0, w, h);
-
+      // hide button when game starts
       btn.setAttribute('disabled', true);
 
       var snakeX = snake[0].x;
@@ -81,7 +87,7 @@ var drawModule = (function () {
 
   var createFood = function() {
       food = {
-        x: Math.floor((Math.random() * 30) + 1),
+        x: Math.floor((Math.random() * 30) + 1),//random number generator
         y: Math.floor((Math.random() * 30) + 1)
       }
 
