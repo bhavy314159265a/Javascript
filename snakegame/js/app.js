@@ -1,4 +1,4 @@
-(function (window, document, drawModule, undefined) {
+(function (window, document, drawModule) {
 
 var btn = document.getElementById('btn');
 btn.addEventListener("click", function(){ drawModule.init();});
